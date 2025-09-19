@@ -124,15 +124,6 @@ python deploy.py
 - **Operations Research**: Supply chain and logistics optimization
 - **ESG/Sustainability**: Environmental and social impact measurement
 
-## 🎯 EY Alignment
-
-This portfolio aligns with EY's core competencies:
-- **Consulting Excellence**: Data-driven insights and recommendations
-- **Risk Management**: Comprehensive risk assessment capabilities
-- **Sustainability**: ESG analytics and reporting
-- **Digital Transformation**: Modern analytics tools and methodologies
-- **Client Value**: Measurable business impact and ROI
-
 ## 📈 Business Impact Metrics
 
 - **Risk Reduction**: 30% improvement in risk identification
@@ -169,12 +160,11 @@ This portfolio aligns with EY's core competencies:
 - **Database**: SQL for data storage and retrieval
 - **Deployment**: Streamlit Cloud, Heroku for web deployment
 
-## 📞 Contact
+##  Contact
 
 For questions about this portfolio or to discuss opportunities at EY, please contact:
-- **Email**: [Your Email]
-- **LinkedIn**: [Your LinkedIn Profile]
-- **Portfolio**: [Your Portfolio Website]
+- Email: [kedar452003@gmail.com]
+- Portfolio: [Your Portfolio Website]
 
 ---
 
