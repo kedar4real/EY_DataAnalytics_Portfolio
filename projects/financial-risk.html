@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Financial Risk Analytics Dashboard</title>
   <link rel="stylesheet" href="../styles.css" />
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
 </head>
 <body>
@@ -40,6 +41,17 @@
             <a class="btn btn-primary" href="https://ey-data-analytics-portfolio.vercel.app/01_Financial_Risk_Analytics/financial_risk_dashboard.py" target="_blank" rel="noopener">Open (Raw)</a>
           </div>
           <p class="note">Note: Streamlit apps require a Python runtime. To run locally, follow the README in the repo.</p>
+
+          <div class="charts-grid">
+            <div class="chart-card">
+              <h4>Value-at-Risk (VaR) by Asset</h4>
+              <div id="chart-var"></div>
+            </div>
+            <div class="chart-card">
+              <h4>Compliance Trend</h4>
+              <div id="chart-compliance"></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -55,5 +67,40 @@
   </footer>
 
   <script src="../script.js"></script>
+  <script>
+    // Simple embedded charts to showcase data/infographics
+    document.addEventListener('DOMContentLoaded', function(){
+      const varData = [{
+        x: ['Equities','Bonds','FX','Commodities'],
+        y: [2.8, 1.2, 1.9, 2.3],
+        type: 'bar',
+        marker: { color: '#4a90e2' }
+      }];
+      const varLayout = {
+        paper_bgcolor: 'rgba(0,0,0,0)',
+        plot_bgcolor: 'rgba(0,0,0,0)',
+        font: { color: '#e8e8e8' },
+        margin: { t: 20, r: 10, b: 40, l: 40 },
+        xaxis: { gridcolor: '#444' }, yaxis: { gridcolor: '#444', title: { text: '% VaR' } }
+      };
+      Plotly.newPlot('chart-var', varData, varLayout, {displayModeBar: false, responsive: true});
+
+      const complianceData = [{
+        x: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct'],
+        y: [94,95,96,96,97,97,98,98,99,99],
+        mode: 'lines+markers',
+        line: { color: '#7ed957', width: 3 }
+      }];
+      const complianceLayout = {
+        paper_bgcolor: 'rgba(0,0,0,0)',
+        plot_bgcolor: 'rgba(0,0,0,0)',
+        font: { color: '#e8e8e8' },
+        margin: { t: 20, r: 10, b: 40, l: 40 },
+        yaxis: { tickformat: ',d', range: [90, 100], gridcolor: '#444', title: { text: '% Compliance' } },
+        xaxis: { gridcolor: '#444' }
+      };
+      Plotly.newPlot('chart-compliance', complianceData, complianceLayout, {displayModeBar: false, responsive: true});
+    });
+  </script>
 </body>
 </html>

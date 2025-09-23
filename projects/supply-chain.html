@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Supply Chain Optimization Analytics</title>
   <link rel="stylesheet" href="../styles.css" />
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
 </head>
 <body>
@@ -40,6 +41,17 @@
             <a class="btn btn-primary" href="https://ey-data-analytics-portfolio.vercel.app/02_Supply_Chain_Optimization/supply_chain_dashboard.py" target="_blank" rel="noopener">Open (Raw)</a>
           </div>
           <p class="note">Note: Dash apps require a Python runtime. To run locally, follow the README in the repo.</p>
+
+          <div class="charts-grid">
+            <div class="chart-card">
+              <h4>Demand Forecast (Next 12 Months)</h4>
+              <div id="chart-forecast"></div>
+            </div>
+            <div class="chart-card">
+              <h4>Inventory Levels by SKU</h4>
+              <div id="chart-inventory"></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -55,5 +67,12 @@
   </footer>
 
   <script src="../script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+      Plotly.newPlot('chart-forecast', [{ x: months, y: [120,130,140,160,180,175,190,200,210,220,230,240], mode:'lines+markers', line:{color:'#4a90e2', width:3}}], {paper_bgcolor:'rgba(0,0,0,0)', plot_bgcolor:'rgba(0,0,0,0)', font:{color:'#e8e8e8'}, margin:{t:20,r:10,b:40,l:40}, xaxis:{gridcolor:'#444'}, yaxis:{gridcolor:'#444', title:{text:'Units'}}}, {displayModeBar:false, responsive:true});
+      Plotly.newPlot('chart-inventory', [{ x:['SKU-1','SKU-2','SKU-3','SKU-4'], y:[500,320,410,280], type:'bar', marker:{color:'#7ed957'}}], {paper_bgcolor:'rgba(0,0,0,0)', plot_bgcolor:'rgba(0,0,0,0)', font:{color:'#e8e8e8'}, margin:{t:20,r:10,b:40,l:40}, xaxis:{gridcolor:'#444'}, yaxis:{gridcolor:'#444', title:{text:'Units'}}}, {displayModeBar:false, responsive:true});
+    });
+  </script>
 </body>
 </html>

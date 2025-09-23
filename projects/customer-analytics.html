@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Customer Analytics</title>
   <link rel="stylesheet" href="../styles.css" />
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
 </head>
 <body>
@@ -40,6 +41,17 @@
             <a class="btn btn-primary" href="https://ey-data-analytics-portfolio.vercel.app/03_Customer_Analytics/customer_analytics_dashboard.py" target="_blank" rel="noopener">Open (Raw)</a>
           </div>
           <p class="note">Note: These notebooks/dashboards require Python to run. See README for setup.</p>
+
+          <div class="charts-grid">
+            <div class="chart-card">
+              <h4>Churn Probability Distribution</h4>
+              <div id="chart-churn"></div>
+            </div>
+            <div class="chart-card">
+              <h4>Customer Segments</h4>
+              <div id="chart-segments"></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -55,5 +67,11 @@
   </footer>
 
   <script src="../script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      Plotly.newPlot('chart-churn', [{ x:[0.1,0.2,0.3,0.4,0.5,0.6,0.7], y:[5,12,24,30,18,8,3], type:'scatter', mode:'lines', line:{color:'#4a90e2', shape:'spline'} }], {paper_bgcolor:'rgba(0,0,0,0)', plot_bgcolor:'rgba(0,0,0,0)', font:{color:'#e8e8e8'}, margin:{t:20,r:10,b:40,l:40}, xaxis:{title:{text:'Churn Probability'}, gridcolor:'#444'}, yaxis:{title:{text:'Customers'}, gridcolor:'#444'}}, {displayModeBar:false, responsive:true});
+      Plotly.newPlot('chart-segments', [{ values:[40,25,20,15], labels:['Loyal','At Risk','New','Dormant'], type:'pie', marker:{colors:['#4a90e2','#ffb74d','#7ed957','#ef5350']} }], {paper_bgcolor:'rgba(0,0,0,0)', plot_bgcolor:'rgba(0,0,0,0)', font:{color:'#e8e8e8'}, margin:{t:20,r:10,b:20,l:10}, legend:{orientation:'h'}}, {displayModeBar:false, responsive:true});
+    });
+  </script>
 </body>
 </html>

@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ESG Analytics</title>
   <link rel="stylesheet" href="../styles.css" />
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
 </head>
 <body>
@@ -40,6 +41,17 @@
             <a class="btn btn-primary" href="https://ey-data-analytics-portfolio.vercel.app/04_ESG_Analytics/esg_dashboard.py" target="_blank" rel="noopener">Open (Raw)</a>
           </div>
           <p class="note">Note: Run locally with Python; instructions in the project README.</p>
+
+          <div class="charts-grid">
+            <div class="chart-card">
+              <h4>ESG Score by Pillar</h4>
+              <div id="chart-esg"></div>
+            </div>
+            <div class="chart-card">
+              <h4>Carbon Emissions Trend</h4>
+              <div id="chart-carbon"></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -55,5 +67,11 @@
   </footer>
 
   <script src="../script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      Plotly.newPlot('chart-esg', [{ x:['Environmental','Social','Governance'], y:[78,84,80], type:'bar', marker:{color:'#4a90e2'} }], {paper_bgcolor:'rgba(0,0,0,0)', plot_bgcolor:'rgba(0,0,0,0)', font:{color:'#e8e8e8'}, margin:{t:20,r:10,b:40,l:40}, xaxis:{gridcolor:'#444'}, yaxis:{gridcolor:'#444', range:[0,100]}}, {displayModeBar:false, responsive:true});
+      Plotly.newPlot('chart-carbon', [{ x:['2019','2020','2021','2022','2023','2024'], y:[120,110,95,90,80,72], mode:'lines+markers', line:{color:'#7ed957', width:3} }], {paper_bgcolor:'rgba(0,0,0,0)', plot_bgcolor:'rgba(0,0,0,0)', font:{color:'#e8e8e8'}, margin:{t:20,r:10,b:40,l:40}, xaxis:{gridcolor:'#444'}, yaxis:{gridcolor:'#444', title:{text:'tCO2e'}}}, {displayModeBar:false, responsive:true});
+    });
+  </script>
 </body>
 </html>
