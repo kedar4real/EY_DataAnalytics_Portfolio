@@ -681,6 +681,21 @@ body {
     color: #4a90e2;
 }
 
+/* Project detail pages */
+.project-page {
+    padding-top: 120px; /* space for fixed navbar */
+}
+
+.project-actions-inline {
+    margin-top: 1rem;
+}
+
+.note {
+    margin-top: 1rem;
+    color: #cccccc;
+    font-size: 0.95rem;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .hamburger {
