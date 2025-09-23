@@ -1,9 +1,21 @@
-[browser]
-gatherUsageStats = false
+[general]
+email = ""
 
 [server]
-headless = false
+headless = true
+enableCORS = false
 port = 8501
+
+[browser]
+serverAddress = "0.0.0.0"
+gatherUsageStats = false
+
+[theme]
+primaryColor = "#1f77b4"
+backgroundColor = "#ffffff"
+secondaryBackgroundColor = "#f0f2f6"
+textColor = "#262730"
+font = "sans serif"
 
 [global]
 showWarningOnDirectExecution = false
