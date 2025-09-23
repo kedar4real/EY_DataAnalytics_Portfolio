@@ -1,11 +1,11 @@
 # 🎯 EY Data Analytics Portfolio
 
-[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-Visit_Portfolio-blue?style=for-the-badge)](https://your-portfolio.vercel.app)
+[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-Visit_Portfolio-blue?style=for-the-badge)](https://ey-data-analytics-portfolio.vercel.app)
 [![GitHub](https://img.shields.io/badge/💻_Source_Code-GitHub-black?style=for-the-badge&logo=github)](https://github.com/kedar4real/EY_DataAnalytics_Portfolio)
 
 A comprehensive portfolio showcasing advanced data analytics capabilities tailored for Ernst & Young consulting roles.
 
-## 🌐 **[→ VIEW LIVE PORTFOLIO ←](https://your-portfolio.vercel.app)**
+## 🌐 **[→ VIEW LIVE PORTFOLIO ←](https://ey-data-analytics-portfolio.vercel.app)**
 
 ## 📊 Portfolio Overview
 
