@@ -35,7 +35,7 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Custom CSS for professional styling
+# Subtle Dark Theme with Excellent Readability
 st.markdown("""
 <style>
     .main-header {
@@ -443,48 +443,31 @@ with tab5:
     # Compliance Timeline
     st.subheader("📅 Compliance Timeline")
     
+    # Create proper timeline data with start and end dates for each regulation
+    from datetime import datetime, timedelta
+    import pandas as pd
+    
     compliance_data = pd.DataFrame({
         'Regulation': ['Basel III', 'CCAR', 'SOX', 'GDPR', 'MiFID II'],
-        'Start_Date': ['2024-01-01', '2024-04-01', '2024-07-01', '2024-02-01', '2024-01-15'],
+        'Start': ['2024-01-01', '2024-04-01', '2024-10-01', '2024-02-01', '2024-01-15'],
         'Next_Review': ['2024-03-15', '2024-06-30', '2024-12-31', '2024-05-25', '2024-04-15'],
         'Status': ['On Track', 'Completed', 'On Track', 'Completed', 'On Track'],
         'Risk_Level': ['Low', 'Low', 'Medium', 'Low', 'Medium']
     })
     
-    # Convert dates to datetime
-    compliance_data['Start_Date'] = pd.to_datetime(compliance_data['Start_Date'])
-    compliance_data['Next_Review'] = pd.to_datetime(compliance_data['Next_Review'])
+    # Create a working timeline chart
+    fig = px.timeline(
+        compliance_data,
+        x_start='Start',
+        x_end='Next_Review',
+        y='Regulation',
+        color='Risk_Level',
+        title='Regulatory Compliance Schedule',
+        color_discrete_map={'Low': 'green', 'Medium': 'orange', 'High': 'red'}
+    )
     
-    # Create timeline chart
-    try:
-        fig = px.timeline(
-            compliance_data,
-            x_start='Start_Date',
-            x_end='Next_Review',
-            y='Regulation',
-            color='Risk_Level',
-            title='Regulatory Compliance Schedule',
-            color_discrete_map={'Low': 'green', 'Medium': 'orange', 'High': 'red'}
-        )
-        fig.update_layout(height=400)
-        st.plotly_chart(fig, use_container_width=True)
-    except:
-        # Fallback to bar chart if timeline fails
-        compliance_data['Days_to_Review'] = (compliance_data['Next_Review'] - pd.Timestamp.now()).dt.days
-        fig = px.bar(
-            compliance_data,
-            x='Regulation',
-            y='Days_to_Review',
-            color='Risk_Level',
-            title='Days Until Next Compliance Review',
-            color_discrete_map={'Low': 'green', 'Medium': 'orange', 'High': 'red'}
-        )
-        fig.update_layout(height=400)
-        st.plotly_chart(fig, use_container_width=True)
-    
-    # Compliance Status Table
-    st.subheader("📊 Compliance Status Details")
-    st.dataframe(compliance_data[['Regulation', 'Next_Review', 'Status', 'Risk_Level']], use_container_width=True)
+    fig.update_layout(height=400)
+    st.plotly_chart(fig, use_container_width=True)
 
 # Footer
 st.markdown("---")
