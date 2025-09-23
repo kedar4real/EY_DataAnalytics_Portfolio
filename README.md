@@ -64,18 +64,7 @@ This portfolio demonstrates expertise in:
 - **Deployment**: Ready for GitHub Pages, Netlify, Vercel, or traditional hosting
 - **EY-Focused**: Tailored specifically for Ernst & Young opportunities
 
-### Quick Website Deployment
-```bash
-# Option 1: GitHub Pages (Free)
-# Upload portfolio_website folder to GitHub repository
-# Enable GitHub Pages in settings
 
-# Option 2: Netlify (Free)
-# Drag and drop portfolio_website folder to netlify.com
-
-# Option 3: Automated deployment
-python deploy.py
-```
 
 ## 🛠️ Setup Instructions
 
@@ -131,26 +120,6 @@ python deploy.py
 - **Customer Retention**: 20% improvement in customer lifetime value
 - **ESG Compliance**: 100% regulatory compliance tracking
 
-## 🌐 Portfolio Website Features
-
-### Professional Design
-- **Modern UI/UX**: Clean, professional design with EY-inspired branding
-- **Responsive Layout**: Works perfectly on desktop, tablet, and mobile
-- **Interactive Elements**: Smooth animations and hover effects
-- **Fast Loading**: Optimized for performance and quick loading
-
-### Content Sections
-- **Hero Section**: Eye-catching introduction with animated statistics
-- **About Section**: Personal story and EY alignment explanation
-- **Projects Showcase**: Detailed presentation of all 4 analytics projects
-- **Skills Section**: Technical skills with animated progress bars
-- **Contact Form**: Professional contact form with validation
-
-### Deployment Ready
-- **Multiple Options**: GitHub Pages, Netlify, Vercel, traditional hosting
-- **Automated Setup**: One-click deployment with `python deploy.py`
-- **SEO Optimized**: Search engine friendly structure
-- **Analytics Ready**: Easy integration with Google Analytics
 
 ## 🔧 Technical Architecture
 
@@ -159,10 +128,6 @@ python deploy.py
 - **Machine Learning**: Scikit-learn for predictive modeling
 - **Database**: SQL for data storage and retrieval
 - **Deployment**: Streamlit Cloud, Heroku for web deployment
-
-##  Contact
-
-For questions about this portfolio or to discuss opportunities at EY, please contact:
 - Email: [kedar452003@gmail.com]
 - Portfolio: [Your Portfolio Website]
 
