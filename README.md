@@ -1,6 +1,7 @@
 EY Data Analytics Portfolio
 A comprehensive portfolio showcasing advanced data analytics capabilities tailored for Ernst & Young consulting roles.
-VIEW LIVE PORTFOLIO
+Live Portfolio: https://ey-data-analytics-portfolio.vercel.app
+GitHub Repository: https://github.com/kedar4real/EY_DataAnalytics_Portfolio
 Portfolio Overview
 This portfolio demonstrates expertise in:
 
@@ -25,11 +26,12 @@ Deployment: Vercel, GitHub Pages
 Specialization: Financial modeling, optimization, ML
 
 Key Features
-
 Professional Risk Analytics - VaR models, credit scoring, compliance tracking
 Operations Optimization - Supply chain modeling, cost reduction strategies
 Customer Intelligence - Segmentation, lifetime value, behavioral analysis
 ESG Reporting - Sustainability metrics, impact measurement
 
+
 For Recruiters & Hiring Managers
-Start with the Live Demo - No installation required. View all dashboards and case studies directly in your browser.
+Live Demo: https://ey-data-analytics-portfolio.vercel.app
+No installation required - view all dashboards and case studies directly in your browser.
